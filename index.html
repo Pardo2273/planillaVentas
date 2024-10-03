@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>&#127849 Ventas de MaDona &#127849</h1>
+    </header>
+    <div input-container>
+        <!--este div lo puse para que el usuario indique directamente la cantidad que desea-->
+        <input class="input" type="number" name="" id="txtCantidad" min="0" placeholder="Ingrese Cantidad Tienda">
+        <div>
+            <!--el boton es para que el usuario genere las tiendas que se generan desde el js-->
+            <button onclick="crearTiendas('contenedorTiendas', 'txtCantidad')">
+                <span class="transition"></span>
+                <span class="gradient"></span>
+                <span class="label">Crear Tiendas</span>
+            </button>
+        </div>
+    </div>
+
+    <!--posee los inputs que se generan con js-->
+    <div id="contenedorTiendas"></div>
+
+    <!--boton que generara los calculos del total ded las ventas-->
+    <div>
+        <button onclick="calcular()">
+            <span class="transition"></span>
+            <span class="gradient"></span>
+            <span class="label">Calcular</span>
+          </button>
+    </div>
+
+    <!--aqui abajo se mostrara la salida del total-->
+    <p id="totalVentas"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
