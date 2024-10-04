@@ -68,7 +68,24 @@ function calcular(){
     // damos el contenido del texto que tendra la etiqueta que esta en el html
     document.getElementById('totalVentas').textContent = textoSalida;
 
-    //falta agregar donde se recalca el input de la mayor/menor venta
+    //debido al reto de remarcar los inputs que poseen mayor y menor ventas se realiza lo siguiente
+    let ventaMayor = mayorVenta(arreglo); //guardo el valor del retorno de la funcion de la mayor venta
+    for(let item of elementoTiendasDiv.children){ //dentro del div donde se despliegan los div>label>input de las tiendas me meto para poder ver lo siguiente
+        let inputVentaMayor = Number(item.children[1].value); //elijo el inputVenta mayor y de una vez obtengo su valor y lo convierto a numerico
+        if(inputVentaMayor == ventaMayor){ //igualo y si es igual sucede lo siguiente, al que posea el valor se le brinda esa clase para que se le de el color que esta en el css
+            item.children[1].setAttribute("class", "mayor");
+        }
+    }
+
+    //la logica es la misma pero con la menor venta
+    let ventaMenor = menorVenta(arreglo);
+    for(let item of elementoTiendasDiv.children){
+        let inputVentaMenor= Number(item.children[1].value);
+        if(inputVentaMenor == ventaMenor){
+            item.children[1].setAttribute("class", "menor");
+        }
+
+    }
 }
 
 function sumarVentas(arreglo){
@@ -91,8 +108,7 @@ function mayorVenta(arreglo){
         }//siempre y cuando la venta sea mayor a la variable mayor se va a almacenar en la variable
     }
     
-    //como tengo que recalcar en verde la mayor venta, voy a devolver la pocision
-    return arreglo.indexOf(mayor);
+    return mayor;
 }
 
 function menorVenta(arreglo){
@@ -104,5 +120,5 @@ function menorVenta(arreglo){
         }//siempre y cuando la venta sea menor a menor, se guardara en la variable menor
     }
 
-    return arreglo.indexOf(menor);
+    return menor;
 }
