@@ -1,7 +1,9 @@
+/*clase para que no este tan pegado del titulo*/
 .input-container{
     margin: 1rem;
 }
 
+/*este es el input donde el usuario ingresa la cantidad de tiendas*/
 .input {
     width: 100%;
     max-width: 270px;
@@ -209,14 +211,65 @@
     text-shadow: 0px 0px 0 #000;
   }
 
+/*este id posee todos los divs de las tiendas como tal, es el div padre*/
+#contenedorTiendas{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/*esta clase es para todos los div hijos del div padre de arriba*/
+.contenedorDivsTiendas{
+  margin: 1rem;
+  width: 50%;
+}
+
+/*esta clase es para los input de las tiendas*/
+.inputsTiendas{
+  background-color: #fff;
+  max-width: 150px;
+  height: 25px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: larger;
+}
+
+.inputsTiendas:focus{
+  color: #fff;
+  background-color: #2e2c2c;
+}
+
+/*para los labels generados para identificar las tiendas*/
+.labelsTiendas{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1.3rem;
+  color: rgb(26, 25, 25);
+}
+
+/*para recalcar la mayor/menor venta*/
 .mayor{
   background-color: green;
+  max-width: 150px;
+  height: 25px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: larger;
 }
 
 .menor{
   background-color: red;
+  max-width: 150px;
+  height: 25px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: larger;
 }
 
+
+/*botones*/
 button {
     font-size: 17px;
     padding: 1em 2.7em;
@@ -272,5 +325,12 @@ button {
   
   button:active {
     transform: scale(0.97);
+  }
+
+  /*id para la salida de las ventas*/
+  #totalVentas{
+    font-size: x-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: underline;
   }
   
